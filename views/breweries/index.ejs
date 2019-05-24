@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+  
+
+
+<div class="container">
+    <header class="jumbotron">
+        <div class= "container">
+                <h1>Welcome to CLT Brewery Passport</h1>
+                <p>Everything you need to know about Charlotte Breweries</p>
+                <p>
+                    <a class= "btn btn-success btn-lg" href="/breweries/new">Add New Brewery</a>
+                </p>
+        </div>
+    </header>
+
+
+    <div class="row text-center" style="display: flex; flex-wrap: wrap">
+            <% breweries.forEach(function(breweries){ %>
+            <div class="col-med-3 col-med-6">
+                <div class="thumbnail">
+                    <img src ="<%= breweries.image %>">
+                    <div class="caption">
+                         <h3><%= breweries.name %></h3>
+                    </div>
+                    <p>
+                        <a href="/breweries/<%= breweries._id %>" class= "btn btn-primary">More Info</a>
+                    </p>
+                </div>
+                   
+                
+            </div>
+                
+            
+            <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>
